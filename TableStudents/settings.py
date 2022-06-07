@@ -54,7 +54,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'http://192.168.1.130:8080',
+    'http://192.168.136.243:8080',
+    'http://localhost:8080',
 )
 
 ROOT_URLCONF = 'TableStudents.urls'

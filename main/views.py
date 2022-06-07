@@ -10,13 +10,10 @@ from main.serializers import StudentSerializer
 
 
 class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        if not pk:
-            return Student.objects.all()
-        return Student.objects.filter(pk=pk)
+
 
 
 

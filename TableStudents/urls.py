@@ -19,10 +19,10 @@ from main.views import *
 from rest_framework import routers
 
 router = routers.SimpleRouter()
-router.register('api/students', StudentViewSet, basename="students")
+router.register(r'students', StudentViewSet, basename="students")
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', include(router.urls))
 ]
-urlpatterns += router.urls

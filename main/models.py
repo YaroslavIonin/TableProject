@@ -10,8 +10,11 @@ class Student(models.Model):
     country = models.CharField(max_length=255, verbose_name='Страна')
     number_doc = models.BigIntegerField(blank=True, verbose_name="Номер документа")
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
-    time_update = models.DateTimeField(auto_now=True, verbose_name="Дата последнего изменения"),
-    user = models.ForeignKey(User, verbose_name="Пользователь", on_delete=models.CASCADE)
+    #time_update = models.DateTimeField(auto_now=True, verbose_name="Дата последнего изменения")
+    #user = models.ForeignKey(User, verbose_name="Пользователь", on_delete=models.CASCADE)
+    date_birth = models.DateField(verbose_name='Дата рождения')
+    is_enrolled = models.BooleanField(verbose_name='Факт зачисления')
+    in_Rus = models.BooleanField(verbose_name='Факт нахождения в России')
 
     def __str__(self):
         return self.name_ru
